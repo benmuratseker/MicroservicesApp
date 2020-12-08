@@ -73,3 +73,14 @@ services:
       - ${HOME}/.aspnet/https:/root/.aspnet/https/
     ports:
       - "8002:80"
+
+  ocelotapigateway:
+    container_name: ocelotapigateway
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - catalog.api
+      - basket.api
+      - ordering.api
+    ports:
+      - "7000:80"
