@@ -1,10 +1,10 @@
 {
-  "ReRoutes": [
+  "Routes": [
     //Catalog API
     {
       "DownstreamPathTemplate": "/api/v1/Catalog",
-      "DownstreamPathScheme": "http",
-      "DownstreamPathHostAndPorts": [
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
           "Host": "catalogapi",
           "Port": "80"
@@ -15,8 +15,8 @@
     },
     {
       "DownstreamPathTemplate": "/api/v1/Catalog/{id}",
-      "DownstreamPathScheme": "http",
-      "DownstreamPathHostAndPorts": [
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
           "Host": "catalogapi",
           "Port": "80"
@@ -26,22 +26,22 @@
       "UpstreamHttpMethod": [ "GET", "DELETE" ]
     },
     {
-      "DownstreamPathTemplate": "/api/v1/Catalog/GetProductByCategory/{category}",
-      "DownstreamPathScheme": "http",
-      "DownstreamPathHostAndPorts": [
+      "DownstreamPathTemplate": "/api/v1/Catalog/GetProductsByCategory/{category}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
           "Host": "catalogapi",
           "Port": "80"
         }
       ],
-      "UpstreamPathTemplate": "/Catalog/GetProductByCategory/{category}",
+      "UpstreamPathTemplate": "/Catalog/GetProductsByCategory/{category}",
       "UpstreamHttpMethod": [ "GET" ]
     },
     //Basket API
     {
       "DownstreamPathTemplate": "/api/v1/Basket",
-      "DownstreamPathScheme": "http",
-      "DownstreamPathHostAndPorts": [
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
           "Host": "basketapi",
           "Port": "80"
@@ -52,8 +52,8 @@
     },
     {
       "DownstreamPathTemplate": "/api/v1/Basket/{userName}",
-      "DownstreamPathScheme": "http",
-      "DownstreamPathHostAndPorts": [
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
           "Host": "basketapi",
           "Port": "80"
@@ -63,22 +63,22 @@
       "UpstreamHttpMethod": [ "DELETE" ]
     },
     {
-      "DownstreamPathTemplate": "/api/v1/Catalog/Checkout",
-      "DownstreamPathScheme": "http",
-      "DownstreamPathHostAndPorts": [
+      "DownstreamPathTemplate": "/api/v1/Basket/Checkout",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
           "Host": "basketapi",
           "Port": "80"
         }
       ],
-      "UpstreamPathTemplate": "/Catalog/Checkout",
+      "UpstreamPathTemplate": "/Basket/Checkout",
       "UpstreamHttpMethod": [ "POST" ]
     },
-    //Ordering API
+    //Order API
     {
       "DownstreamPathTemplate": "/api/v1/Order",
-      "DownstreamPathScheme": "http",
-      "DownstreamPathHostAndPorts": [
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
           "Host": "orderingapi",
           "Port": "80"
